@@ -17,6 +17,10 @@ const page = () => {
   const createTeam = useMutation(api.teams.createTeam);
   const router = useRouter();
   const handleCreateTeam = async () => {
+    if (teamName.trim().toLowerCase() === "dashboard") {
+      router.push("/dashboard");
+      return;
+    }
     await createTeam({
       teamName,
       createdBy: user?.email!,

@@ -40,7 +40,7 @@ const Workspace = ({ params }: any) => {
       name: "Document",
     },
     {
-      name: "Both",
+      name: "AI",
     },
     {
       name: "Canvas",
@@ -51,7 +51,7 @@ const Workspace = ({ params }: any) => {
   const [triggerSave, setTriggerSave] = useState(false);
 
   return (
-    <div className="overflow-hidden w-full">
+    <div className="overflow-hidden w-full bg-[#4b2e19]">
       <WorkSpaceHeader
         Tabs={Tabs}
         setActiveTab={setActiveTab}
@@ -63,6 +63,7 @@ const Workspace = ({ params }: any) => {
         <div
           style={{
             height: "calc(100vh - 3rem)",
+            background: "#6e4b2a",
           }}
         >
           <Editor
@@ -75,6 +76,7 @@ const Workspace = ({ params }: any) => {
         <ResizablePanelGroup
           style={{
             height: "calc(100vh - 3rem)",
+            background: "#6e4b2a",
           }}
           direction="horizontal"
         >
@@ -85,7 +87,7 @@ const Workspace = ({ params }: any) => {
               fileData={fileData!}
             />
           </ResizablePanel>
-          <ResizableHandle className=" bg-neutral-600" />
+          <ResizableHandle className="bg-[#7c5c3e]" />
           <ResizablePanel defaultSize={50} minSize={45}>
             <Canvas
               onSaveTrigger={triggerSave}
@@ -98,6 +100,7 @@ const Workspace = ({ params }: any) => {
         <div
           style={{
             height: "calc(100vh - 3rem)",
+            background: "#6e4b2a",
           }}
         >
           <Canvas

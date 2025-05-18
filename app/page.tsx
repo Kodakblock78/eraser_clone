@@ -1,13 +1,13 @@
-import Footer from "./_components/Footer";
-import Header from "./_components/Header";
-import Hero from "./_components/Hero";
+import Workspace from "./(routes)/workspace/[fileId]/page";
+
+// Hardcode a fileId for demo workspace (replace with a real fileId if needed)
+const DEMO_FILE_ID = "demo-file-id";
 
 export default function Home() {
+  // Render the Workspace directly as the home page
   return (
-    <div className="relative">
-      <Header />
-      <Hero />
-      <Footer />
+    <div className="w-full h-full">
+      <Workspace params={{ fileId: DEMO_FILE_ID }} />
     </div>
   );
 }

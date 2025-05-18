@@ -5,13 +5,13 @@ import SidebarTopButton, { Team } from "./SidebarTopButton";
 import { Button } from "@/components/ui/button";
 import { LayoutDashboard } from "lucide-react";
 import SideNavBottomMenu from "./SideNavBottomMenu";
-import { useKindeBrowserClient } from "@kinde-oss/kinde-auth-nextjs";
 import { useConvex, useMutation } from "convex/react";
 import { api } from "@/convex/_generated/api";
 import { toast } from "sonner";
 import { FileListContext } from "../_context/FileListContext";
 const Sidebar = () => {
-  const { user } = useKindeBrowserClient();
+  // const { user } = useKindeBrowserClient();
+  const user = { email: "demo@inactive-auth.com" }; // Dummy user for inactive auth
   const createFile = useMutation(api.files.createNewFile);
 
   const [activeTeam, setActiveTeam] = useState<Team | any>();
@@ -69,7 +69,7 @@ const Sidebar = () => {
     <div className="text-white h-screen hidden sm:fixed max-w-64 py-4 px-4 sm:flex border-r border-neutral-800 flex-col">
       <div className="flex-1">
         <SidebarTopButton
-          user={user}
+          user={user} // Pass dummy user
           setActiveTeamInfo={(activeTeam: Team) => setActiveTeam(activeTeam)}
         />
         <Button
