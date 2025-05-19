@@ -39,7 +39,7 @@ const WorkSpaceHeader = ({
       <div className="flex space-x-2 items-center justify-start w-full">
         <Link href="/dashboard" className="flex space-x-2 items-center">
           <img
-            src=""
+            src="/logo.jpg"
             alt="logo"
             className="w-8 h-8"
             style={{
@@ -120,18 +120,7 @@ const WorkSpaceHeader = ({
         >
           <Save size={20} />
         </div>
-        <div
-          onClick={() => {
-            navigator.clipboard.writeText(
-              `${window.location.origin}/workspace/${file._id}`
-            );
-            toast.success("Link Copied");
-          }}
-          className="rounded-sm flex text-sm items-center bg-[#a67c52] hover:bg-[#7c5c3e] hover:text-[#e6d3b3] cursor-pointer px-2 py-1"
-        >
-          Share
-          <Link2 size={16} className="ml-2" />
-        </div>
+
         <Popover>
           <PopoverTrigger asChild>
             <div className="rounded-sm hover:bg-[#a67c52] hover:text-[#3e2c1c] cursor-pointer p-1">
